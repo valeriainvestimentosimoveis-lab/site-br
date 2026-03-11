@@ -2,36 +2,65 @@
 
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Valéria Mangeon Imóveis</title>
 
 <style>
-html,body{
+
+body{
 margin:0;
-padding:0;
-width:100%;
-height:100%;
-overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
 background:#000;
+height:100vh;
 }
 
-.pdf{
-position:fixed;
-top:0;
-left:0;
+.container{
+position:relative;
 width:100%;
-height:100%;
+max-width:420px;
 }
+
+.container img{
+width:100%;
+display:block;
+}
+
+.botao{
+position:absolute;
+left:20%;
+width:60%;
+height:7%;
+}
+
+.linkedin{ top:47%; }
+.instagram{ top:57%; }
+.whatsapp{ top:67%; }
+.email{ top:77%; }
+
 </style>
 
 </head>
 
 <body>
 
-<embed class="pdf"
-src="valeria.pdf#toolbar=0&navpanes=0&scrollbar=0"
-type="application/pdf">
+<div class="container">
+
+<img src="cartao.jpg">
+
+<a class="botao linkedin" href="https://linkedin.com" target="_blank"></a>
+
+<a class="botao instagram" href="https://instagram.com" target="_blank"></a>
+
+<a class="botao whatsapp" href="https://wa.me/5511999999999" target="_blank"></a>
+
+<a class="botao email" href="mailto:email@email.com"></a>
+
+</div>
 
 </body>
 </html>
