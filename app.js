@@ -56,6 +56,17 @@
 
     let installPrompt = null;
     const installButton = document.getElementById("installApp");
+    const iosInstallModal = document.getElementById("iosInstallModal");
+    const closeIosInstall = document.getElementById("closeIosInstall");
+
+    const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    const isStandalone =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      window.navigator.standalone === true;
+
+    if (isIos && !isStandalone && installButton) {
+      installButton.hidden = false;
+    }
 
     window.addEventListener("beforeinstallprompt", (event) => {
       event.preventDefault();
@@ -64,12 +75,27 @@
     });
 
     installButton?.addEventListener("click", async () => {
+      if (isIos) {
+        if (iosInstallModal) iosInstallModal.hidden = false;
+        return;
+      }
+
       if (!installPrompt) return;
 
       await installPrompt.prompt();
       await installPrompt.userChoice;
       installPrompt = null;
       installButton.hidden = true;
+    });
+
+    closeIosInstall?.addEventListener("click", () => {
+      if (iosInstallModal) iosInstallModal.hidden = true;
+    });
+
+    iosInstallModal?.addEventListener("click", (event) => {
+      if (event.target === iosInstallModal) {
+        iosInstallModal.hidden = true;
+      }
     });
 
     window.addEventListener("appinstalled", () => {
