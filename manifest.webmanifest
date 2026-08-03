@@ -1,0 +1,55 @@
+{
+  "id": "./",
+  "name": "Valéria Mangeon Imóveis e Investimentos",
+  "short_name": "Valéria Mangeon",
+  "description": "Imóveis singulares para pessoas únicas. Acesse os imóveis e fale com Valéria Mangeon.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#968c88",
+  "theme_color": "#968c88",
+  "categories": [
+    "business",
+    "lifestyle"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./assets/capa-mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Cartão digital de Valéria Mangeon no celular"
+    },
+    {
+      "src": "./assets/capa-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Cartão digital de Valéria Mangeon no computador"
+    }
+  ]
+}

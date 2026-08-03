@@ -1,0 +1,19 @@
+SUBSTITUIÇÃO DO REPOSITÓRIO EXISTENTE — VALÉRIA MANGEON
+
+1. Faça backup do repositório atual em Code > Download ZIP.
+2. Não crie outro repositório.
+3. Abra valeriainvestimentosimoveis-lab/site-br.
+4. Não altere o nome do repositório.
+5. Não altere Settings > Pages.
+6. Mantenha main e /(root).
+7. Na raiz, clique Add file > Upload files.
+8. Envie todo o conteúdo desta pasta, incluindo a pasta assets.
+9. Confirme o commit diretamente na branch main.
+10. Aguarde a republicação.
+11. Teste primeiro:
+    https://valeriainvestimentosimoveis-lab.github.io/site-br/
+12. Depois configure o domínio em Settings > Pages.
+
+ATENÇÃO:
+E-mail oficial atualizado:
+valeriamangeon.investimentos@gmail.com
