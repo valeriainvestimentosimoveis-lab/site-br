@@ -58,13 +58,19 @@
     const installButton = document.getElementById("installApp");
     const iosInstallModal = document.getElementById("iosInstallModal");
     const closeIosInstall = document.getElementById("closeIosInstall");
+    const installTitle = document.getElementById("iosInstallTitle");
+    const installInstructions = document.getElementById("installInstructions");
 
     const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
     const isStandalone =
       window.matchMedia("(display-mode: standalone)").matches ||
       window.navigator.standalone === true;
 
-    if (isIos && !isStandalone && installButton) {
+    const isMobileOrTablet =
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(max-width: 1024px)").matches;
+
+    if (isMobileOrTablet && !isStandalone && installButton) {
       installButton.hidden = false;
     }
 
@@ -75,17 +81,40 @@
     });
 
     installButton?.addEventListener("click", async () => {
-      if (isIos) {
-        if (iosInstallModal) iosInstallModal.hidden = false;
+      if (installPrompt) {
+        await installPrompt.prompt();
+        await installPrompt.userChoice;
+        installPrompt = null;
+        installButton.hidden = true;
         return;
       }
 
-      if (!installPrompt) return;
+      if (installTitle && installInstructions) {
+        if (isIos) {
+          installTitle.textContent = "Instalar no iPhone ou iPad";
+          installInstructions.innerHTML = `
+            <p>Abra este site no Safari e siga:</p>
+            <ol>
+              <li>Toque em <strong>Compartilhar</strong>.</li>
+              <li>Toque em <strong>Adicionar à Tela de Início</strong>.</li>
+              <li>Ative <strong>Abrir como App da Web</strong>, se aparecer.</li>
+              <li>Toque em <strong>Adicionar</strong>.</li>
+            </ol>
+          `;
+        } else {
+          installTitle.textContent = "Instalar no celular";
+          installInstructions.innerHTML = `
+            <p>No Chrome, siga:</p>
+            <ol>
+              <li>Toque nos <strong>três pontos</strong> do navegador.</li>
+              <li>Toque em <strong>Instalar aplicativo</strong> ou <strong>Adicionar à tela inicial</strong>.</li>
+              <li>Confirme em <strong>Instalar</strong>.</li>
+            </ol>
+          `;
+        }
+      }
 
-      await installPrompt.prompt();
-      await installPrompt.userChoice;
-      installPrompt = null;
-      installButton.hidden = true;
+      if (iosInstallModal) iosInstallModal.hidden = false;
     });
 
     closeIosInstall?.addEventListener("click", () => {
