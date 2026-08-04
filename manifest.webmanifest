@@ -9,8 +9,8 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#968c88",
-  "theme_color": "#968c88",
+  "background_color": "#ede7e3",
+  "theme_color": "#ede7e3",
   "categories": [
     "business",
     "lifestyle"
