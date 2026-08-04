@@ -44,13 +44,3 @@ Passos:
 3. Adicionar à Tela de Início
 4. Abrir como App da Web
 5. Adicionar
-
-
-## Layout baseado na arquitetura validada da Renata Ramos
-
-A imagem ocupa 100% da largura disponível e mantém altura automática.
-O site não força a arte para dentro da altura da viewport. Isso elimina
-as faixas laterais no desktop e as faixas superior/inferior no celular,
-sem usar `object-fit: cover` e sem recortar a imagem.
-
-Em telas cuja altura útil é menor, a página pode ter rolagem vertical.
