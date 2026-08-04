@@ -1,4 +1,4 @@
-const CACHE_NAME = "valeria-mangeon-site-v2-ios";
+const CACHE_NAME = "valeria-mangeon-site-v3-sem-cortes";
 
 const STATIC_FILES = [
   "./",
