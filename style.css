@@ -1,11 +1,11 @@
 *{box-sizing:border-box}
 :root{--fundo:#968c88;--texto:#fffaf7}
-html,body{width:100%;min-height:100%;margin:0;background:var(--fundo)}
+html,body{width:100%;height:100%;margin:0;background:var(--fundo)}
 body{min-height:100svh;overflow:hidden;font-family:Arial,Helvetica,sans-serif}
-.pagina{width:100vw;height:100svh;min-height:100svh;display:grid;place-items:center;overflow:hidden;background:var(--fundo)}
-.cartao{position:relative;line-height:0;overflow:hidden;background:var(--fundo);width:min(100vw,calc(100svh * 1080 / 1920));aspect-ratio:1080/1920}
+.pagina{position:fixed;inset:0;width:100vw;height:100svh;overflow:hidden;background:var(--fundo)}
+.cartao{position:absolute;inset:0;line-height:0;overflow:hidden;background:var(--fundo)}
 picture,.capa{display:block;width:100%;height:100%}
-.capa{object-fit:contain;object-position:center;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.capa{object-fit:cover;object-position:center;user-select:none;-webkit-user-drag:none;pointer-events:none}
 .area-link{position:absolute;z-index:50;display:block;pointer-events:auto;border-radius:22px;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:rgba(255,255,255,.20)}
 .area-link:focus-visible{outline:4px solid #fff;outline-offset:-4px}
 .area-link:active{background:rgba(255,255,255,.10)}
@@ -19,7 +19,6 @@ picture,.capa{display:block;width:100%;height:100%}
 
 /* TABLET VERTICAL — 1535 × 2048 */
 @media (orientation:portrait) and (min-width:600px){
-.cartao{width:min(100vw,calc(100svh * 1535 / 2048));aspect-ratio:1535/2048}
 .imoveis{left:25.863%;top:58.643%;width:48.860%;height:6.152%}
 .whatsapp{left:25.863%;top:66.895%;width:48.860%;height:6.104%}
 .email{left:25.863%;top:75.293%;width:48.860%;height:6.104%}
@@ -28,7 +27,6 @@ picture,.capa{display:block;width:100%;height:100%}
 
 /* TABLET HORIZONTAL — 2048 × 1535 */
 @media (orientation:landscape) and (pointer:coarse){
-.cartao{width:min(100vw,calc(100svh * 2048 / 1535));aspect-ratio:2048/1535}
 .imoveis{left:72.119%;top:59.414%;width:24.658%;height:5.668%}
 .whatsapp{left:72.119%;top:66.840%;width:24.658%;height:5.537%}
 .email{left:72.119%;top:74.332%;width:24.658%;height:5.603%}
@@ -37,7 +35,6 @@ picture,.capa{display:block;width:100%;height:100%}
 
 /* NOTEBOOK E DESKTOP — 1920 × 1080 */
 @media (orientation:landscape) and (pointer:fine){
-.cartao{width:min(100vw,calc(100svh * 1920 / 1080));aspect-ratio:1920/1080}
 .imoveis{left:71.302%;top:49.722%;width:25.052%;height:7.593%}
 .whatsapp{left:71.302%;top:59.722%;width:25.052%;height:7.593%}
 .email{left:71.302%;top:69.907%;width:25.052%;height:7.593%}
